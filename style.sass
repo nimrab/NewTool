@@ -1,0 +1,593 @@
+@import 'vars'
+
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+
+body
+    font-family: 'Roboto', sans-serif;
+
+.ol
+    outline: 1px solid
+
+.header
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 24px 16px 0 16px
+
+.logo
+    position: relative
+
+    &__circle-left  
+        width: 30.37px
+        height: 32px
+        background: #316099
+        border-radius: 20px
+    
+    &__circle-right
+        width: 30.37px
+        height: 32px
+        border-radius: 20px
+        background: #ffffff
+        border: 2px solid #316099
+        position: absolute
+        top: 0
+        left: 15px
+        z-index: 1
+
+.menu-icon
+    width: 22.78px
+    height: 16px
+
+.top 
+
+    &__content
+        background: linear-gradient(0deg, rgba(152, 195, 232, 0.2) 8.84%, rgba(152, 195, 232, 0) 31.12%)
+        display: flex
+        flex-direction: column
+        align-items: center
+        padding-bottom: 41px
+
+    &__header-text
+        @include fcw(32px, #1F3F68, 400)
+        line-height: 37px
+        text-align: center
+        letter-spacing: 0.04em
+        margin: 36px 17px 0 16px
+        
+
+    &__text
+        @include fcw(16px, #1F3F68, 400)
+        text-align: center
+        letter-spacing: 0.05em
+        line-height: 26px
+        opacity: 0.6
+        margin: 12px 16px 32px 16px
+        
+.button
+    display: block
+    width: 108px
+    height: 27px
+    border-radius: 10px
+    text-decoration: none
+    background: #5A98D0;
+    @include fcw(12px, #ffffff, 400)
+    @include flex_center
+    &:hover
+        box-shadow: 5px 10px 10px rgba(53, 110, 173, 0.2)
+    &:active
+        box-shadow: inset 5px 8px 8px rgba(53, 110, 173, 0.4)
+
+.promo
+    padding: 0 20px
+
+    &__header-text
+        @include fcw(24px, #000000, 400)
+        line-height: 28px
+
+    &__main-box
+        @include flex_column_center
+
+    &__header-text
+        @include fcw(24px, #000000, 400)
+        text-align: center
+        letter-spacing: 0.05em
+        margin-top: 48px
+
+    &__box
+        margin-top: 32px
+        max-width: 359px
+        display: flex
+        flex-direction: column
+        border-radius: 10px
+        box-shadow: 5px 20px 50px rgba(16, 112, 177, 0.2)
+        position: relative
+        &:hover
+            transform: scale(1.03, 1.03)
+            transition: 0.5s
+
+    &__img
+        align-self: center
+        margin-top: 41px
+        margin-bottom: 48px
+
+        &_cover
+            position: absolute
+            top: 0px
+            align-self: center
+
+
+    &__h3  
+        @include fcw(20px, #1F3F68, 400)
+        letter-spacing: 0.05em
+        line-height: 30px
+        margin: 0 41px 0 30px
+
+    &__text
+        @include fcw(16px, #1F3F68, 400)
+        letter-spacing: 0.05em
+        line-height: 26px
+        opacity: 0.6
+        margin: 13px 55px 10px 30px
+    
+    &__link
+        display: block
+        width: 115px
+        height: 25px
+        margin-left: 30px
+        text-decoration: none
+        @include fcw(14px, #5A98D0, 400)
+        letter-spacing: 0.05em
+        padding-top: 3px
+        padding-right: 10px
+        margin-bottom: 15px
+        position: relative
+        
+        &:hover
+            text-decoration: underline
+        &:hover .promo__arrow
+            transform: translateX(10px)
+            transition: 0.5s
+
+    &__arrow
+        position: absolute
+        top: 1px
+        left: 90px
+
+.finished
+    padding: 0 20px 64px 20px
+
+    &__header-text
+        text-align: center
+        margin: 64px 16px 32px 16px
+        @include fcw(24px, #000000, 400)
+        line-height: 28px
+
+    &__main-box
+        @include flex_column_center
+
+    &__text
+        text-align: center
+        @include fcw(16px, #222222, 400)
+        line-height: 26px
+        letter-spacing: 0.05em
+        margin-bottom: 66px
+        padding: 0 calc((100% - 350px) / 2 )
+
+    &__box
+        max-width: 343px
+        height: 144px
+        margin-top: 16px
+        border-radius: 10px
+        display: flex
+        
+        &_bg1
+            width: 100%
+            background-image: url('img/fin-box-1-bg.png')
+            background-position: center center
+            background-size: cover
+            background-repeat: no-repeat
+            position: relative
+            
+        &_bg1::after
+            position: absolute
+            content: ''
+            top: 0
+            width: 100%
+            height: 100%
+            background: linear-gradient(89.97deg, #1F3F68 3.62%, rgba(31, 63, 104, 0.37) 97.78%)
+            border-radius: 10px
+
+        &_bg2
+            background-image: url('img/fin-box-2.png')
+            background-size: cover
+            background-repeat: no-repeat
+            width: 100%
+            height: 100%
+
+        &_bg3
+            background-image: url('img/fin-box-3.png')
+            background-size: cover
+            background-repeat: no-repeat
+            width: 100%
+            height: 100%
+        
+        &_height
+            height: 255px
+
+    &__img
+        max-width: 100%
+        max-height: 100%
+        position: relative
+        z-index: 2
+
+    &__img-big
+            display: none
+    
+    &__box-text
+        @include fcw(16px, #ffffff, 400)
+        line-height: 19px
+        margin: 16px
+        position: relative
+        z-index: 1
+
+        &_right
+            justify-content: space-between
+        
+.interested   
+    margin-top: 64px
+    @include flex_column_center
+    background: #316099
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4)
+
+    &__header-text
+        @include fcw(24px, #ffffff, 400)    
+        text-align: center
+        line-height: 28px
+        margin: 16px 0 32px 0
+        
+    &__text
+        @include fcw(16px, #ffffff, 400)
+        text-align: center
+        line-height: 26px
+        letter-spacing: 0.05em
+        opacity: 0.6
+        margin: 0 16px
+   
+    &__mid
+        @include flex_column_center
+
+    &__link
+        display: block
+        width: 108px
+        height: 31px
+        margin: 40px 0
+        background-color: #5A98D0
+        @include fcw(16px, #ffffff, 400)
+        @include flex_center
+        letter-spacing: 0.04em
+        text-decoration: none
+        &:hover
+            box-shadow: 5px 10px 15px rgba(140, 155, 175, 0.2)
+        &:active
+            box-shadow: inset 5px 8px 8px rgba(53, 110, 173, 0.4)
+
+.contact
+    background: #316099
+    padding-top: 15px
+   
+    &__ul
+        list-style-type: none
+
+    &__li
+        @include fcw(16px, #ffffff, 400)
+        letter-spacing: 0.05em
+        line-height: 19px
+        padding: 17px 16px 0 56px
+       
+        &_add::before
+            content: 'A.'
+            margin-left: -40px
+            margin-right: 23px
+
+        &_tel::before
+            content: 'T.'
+            margin-left: -40px
+            margin-right: 23px
+
+        &_ema::before
+            content: 'E.'
+            margin-left: -40px
+            margin-right: 23px
+.footer
+    padding: 32px 16px
+    background: #316099
+    @include fcw(16px, rgba(255, 255, 255, 0.4), 400)
+    letter-spacing: 0.05em
+    @include flex_center
+
+
+@media (max-width: $tablet - 1px)
+    
+    .top
+        &__img-mid
+            display: none
+
+        &__img-big
+            display: none
+
+@media (min-width: $tablet)
+    
+    .header
+        padding: 55px 36px 0 32px
+
+    .top
+        
+        &__content 
+            align-items: flex-start
+            padding-bottom: 190px
+            position: relative
+
+        &__header-text
+            @include fcw(64px, #1F3F68, 400)
+            line-height: 74px
+            text-align: left
+            margin: 120px 0 0 32px
+            width: 520px
+        
+        &__text
+            text-align: left
+            margin: 32px 0 72px 32px
+            width: 425px
+        
+        &__img-mid
+            position: absolute
+            width: 394px
+            height: 333px
+            top: 280px
+            right: 16px
+
+        &__img-big
+            display: none
+
+    .button
+        @include fcw(16px, #ffffff, 400)
+        letter-spacing: 0.04em
+        width: 220px
+        height: 56px
+        margin-left: 32px
+
+    .promo
+        padding: 0 32px
+
+        &__header-text
+            @include fcw(36px, #000000, 400)
+            line-height: 46px
+            letter-spacing: 0.05em
+            margin-top: 64px
+            margin-bottom: 32px
+
+    .finished
+        padding: 0 32px 109px 32px
+
+        &__header-text
+            @include fcw(36px, #000000, 400)
+            line-height: 46px
+            letter-spacing: 0.05em
+            margin: 127px 32px 32px 32px
+        
+        &__text
+            padding: 0 calc((100% - 670px) / 2)
+            margin-bottom: 32px
+            text-align: center
+
+        &__main-box
+           flex-direction: row
+           justify-content: center
+      
+        &__box_mid
+            min-width: 705px
+            height: 297px
+        
+        &__box
+            position: relative
+            margin-top: 32px
+
+            &_bg1
+                background-image: url('img/fin-box-1-bg-mid.png')
+            
+            &_bg3
+                margin-left: 20px
+
+        &__box-text_right
+            position: absolute
+            top: 50px
+            left: 235px
+            @include fcw(32px, #ffffff, 400)
+            letter-spacing: 0.05em
+
+        &__box-text
+            @include fcw(28px, #ffffff, 400)
+            margin: 30px 0px 0px 20px
+
+        &__img-big
+            display: none
+
+    .interested
+        align-items: flex-start
+        padding: 0 124px
+        margin-top: 109px
+
+        &__mid
+            align-self: stretch
+            display: flex
+            flex-direction: row
+            justify-content: space-between
+
+        &__header-text
+            align-self: flex-start
+            width: 336px
+            
+            @include fcw(36px, #ffffff, 400)
+            line-height: 46px
+            letter-spacing: 0.05em
+            text-align: left
+            margin-right: 184px
+            margin-top: 47px
+
+        &__text
+            justify-self: flex-start
+            text-align: left
+            margin: 0 0 64px 0
+            width: 336px
+        
+        &__link
+            align-self: flex-start
+            min-width: 133px
+            margin: 0 0 0 51px
+            &:hover
+                box-shadow: 5px 10px 15px rgba(140, 155, 175, 0.2)
+            &:active
+                box-shadow: inset 5px 8px 8px rgba(53, 110, 173, 0.4)
+
+    .contact
+        padding-top: 39px
+        padding-left: 124px
+
+        &__li
+            padding-top: 25px
+
+            &_add::before
+                margin-left: -55px
+                margin-right: 37px
+
+            &_tel::before
+                margin-left: -55px
+                margin-right: 37px
+
+            &_ema::before
+                margin-left: -55px
+                margin-right: 37px 
+
+    .footer
+        padding: 64px 124px
+        justify-content: flex-start
+
+@media (min-width: $screen)
+
+    .header
+        padding: 48px 117px 0 114px
+
+    .top
+
+        &__img-mid
+            display: none
+
+        &__img-big
+            display: block
+            width: 649px
+            height: 549px
+            position: absolute
+            top: 79px
+            right: 70px
+
+        &__header-text
+            margin: 109px 0 0 113px
+
+        &__text
+            margin: 32px 0 72px 114px
+    
+    .button
+        margin-left: 114px
+
+    .promo
+        padding: 0 113px
+
+        &__main-box
+            flex-direction: row
+            justify-content: center
+                
+        &__box
+            height: 475px
+            &:nth-last-of-type(2)
+                margin-left: 32px
+
+            &:nth-last-of-type(1)
+                margin-left: 32px
+    
+    .finished
+        padding: 0 113px 112px 113px
+
+        &__header-text
+            margin: 64px 0
+
+        &__text
+            padding: 0 calc((100% - 750px) / 2)
+
+        &__box_mid
+            min-width: 1140px
+            height: 480px
+
+        &__img
+            display: none
+
+        &__img-big
+            display: block
+            max-width: 100%
+            max-height: 100%
+            position: relative
+            z-index: 2
+
+        &__box
+            max-width: 554px
+            width: 554px
+
+            &_height
+                height: 417px
+
+            &_bg1
+                background-image: url('img/fin-box-1-bg-big.png')
+
+            &_bg3
+                margin-left: 34px            
+
+        &__box-text_right
+            top: 64px
+            left: 720px
+        
+        &__box-text
+            margin: 32px
+
+    .interested
+        padding: 0 212px 0 229px
+
+        &__header-text
+            margin-top: 97px
+            width: 340px
+
+        &__text
+            width: 495px
+            margin: 0 0 96px 0
+
+        &__link
+            width: 237px
+            height: 56px   
+
+    .contact
+        padding: 64px 114px 64px 155px
+
+        &__ul
+            display: flex
+            justify-content: space-between
+
+        &__li
+            width: 317px
+
+    .footer
+        padding: 0 0 64px 113px
+
+.header, .top, .promo, .finished, .interested, .contact, .footer
+    margin: 0 auto
+    max-width: $max-screen
